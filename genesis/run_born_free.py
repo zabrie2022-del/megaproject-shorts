@@ -1,5 +1,5 @@
 """Born-free run: agents start with nothing, earn from customer jobs, clone for free,
-and trade only with money they earned. MODELED numbers, play money, not real."""
+and do NOT trade (trading and crypto were switched off by the owner). MODELED numbers, play money, not real."""
 import random, sys
 from genesis.policy import Policy
 from genesis.core import Genesis, Refused
@@ -43,12 +43,6 @@ def run(customers_per_day, days=60, seed=1, max_agents=20000, quiet=False):
             jobs -= done
             if done == JOBS_PER_AGENT:
                 busy.append(a)
-        for a in workers:                       # trade only with earned money
-            if g.unlock_trading(a.id, UNLOCK):
-                stake = g.cash(a.id) // 4
-                res = int(stake * rng.gauss(*TRADE_EDGE))
-                if res:
-                    g.record(a.id, "trading_result", max(res, -stake))
         for a in busy:                          # free clones, only while customers are waiting
             if jobs <= 0:
                 break

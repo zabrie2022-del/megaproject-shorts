@@ -13,9 +13,7 @@ network_daily_loss_stop: 500
 daily_payout_limit: 1000
 max_days_to_profit: 30
 child_monthly_cost_estimate: 3
+# Trading and crypto are OFF by the owner's decision (19 Nov 2026): no trading strategies listed.
 strategy_capacity:
-  trend: 5000
-  dip: 3000
-  breakout: 3000
   client_work: 8000
   product: 4000
