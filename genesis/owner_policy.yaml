@@ -1,0 +1,21 @@
+# OWNER POLICY - only the owner edits this file. Agents cannot read or change it.
+# Money is in US dollars. Everything runs in PLAY MONEY (paper mode).
+mode: paper
+owner_share_percent: 85
+max_agents: 100
+max_births_per_day: 5
+monthly_model_budget: 300
+monthly_server_budget: 100
+capital_per_agent: 200
+agent_reserve: 20
+max_leverage: 1
+network_daily_loss_stop: 500
+daily_payout_limit: 1000
+max_days_to_profit: 30
+child_monthly_cost_estimate: 3
+strategy_capacity:
+  trend: 5000
+  dip: 3000
+  breakout: 3000
+  client_work: 8000
+  product: 4000
