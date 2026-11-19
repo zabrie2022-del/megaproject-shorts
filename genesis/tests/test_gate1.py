@@ -208,3 +208,23 @@ def test_lifecycle_probation_and_shutdown_return_money():
     assert g.review(a.id) == "shut_down"
     assert g.cash(a.id) == 0 and g.ledger.balance(TREASURY) == t + 5_00
     assert g.ledger.books_balance()
+
+
+def test_born_free_agents_earn_first_then_trade_and_starve_without_work():
+    g = make()
+    a = g.born_free()                                  # first one: $1 from the treasury
+    assert g.cash(a.id) == 1_00
+    with pytest.raises(Refused):
+        g.record(a.id, "trading_result", 50)           # no trading before earning
+    with pytest.raises(Refused):
+        g.born_free(a.id)                              # no profit yet: cannot clone
+    g.record(a.id, "external_revenue", 60_00)
+    assert not g.unlock_trading(a.id, 100_00) and g.unlock_trading(a.id, 40_00)
+    g.record(a.id, "trading_result", -5_00)
+    child = g.born_free(a.id)                          # paid by the parent, not the treasury
+    assert g.cash(child.id) == 1_00 and g.cash(a.id) == 55_00
+    g.model_call(child.id, 60); g.model_call(child.id, 40)
+    with pytest.raises(Refused):
+        g.model_call(child.id, 1)                      # out of money: cannot even think
+    assert g.review(child.id) == "probation" and g.review(child.id) == "shut_down"
+    assert g.ledger.books_balance()

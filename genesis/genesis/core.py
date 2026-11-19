@@ -88,6 +88,8 @@ class Genesis:
             raise LedgerError("agents can only book revenue, cost or trading results")
         if tag == "external_revenue" and amount <= 0 or tag == "external_cost" and amount >= 0:
             raise LedgerError("wrong sign for tag")
+        if tag == "trading_result" and a.params.get("born_free") and not a.params.get("can_trade"):
+            raise Refused([f"agent {agent_id} must earn its trading money first"])
         if amount < 0 and -amount > self.cash(agent_id):
             raise Refused([f"agent {agent_id} cannot spend past its budget"])
         if tag == "trading_result" and amount < 0 and \
@@ -198,6 +200,46 @@ class Genesis:
         self.ledger.transfer(self.day, "internal_transfer", agent_account(parent_id),
                              agent_account(child.id), budget, child.id, "child budget")
         return child
+
+    # ---- born-free agents: start with nothing, earn first, trade later ----------
+    def born_free(self, parent_id=None, strategy="client_work", allowance=100):
+        """A clone that gets no budget. It receives only a tiny allowance to pay for
+        its first thoughts (from its parent, or the treasury for the first one),
+        must earn from service work, and may trade only after unlock_trading()."""
+        reasons = []
+        if self.killed:
+            reasons.append("kill switch is on: replication frozen")
+        if len(self.live_agents()) >= self.policy.max_agents:
+            reasons.append("rule 3: agent cap reached")
+        if self.births.get(self.day, 0) >= self.policy.max_births_per_day:
+            reasons.append("rule 3: today's birth cap reached")
+        if strategy not in self.policy.strategy_capacity:
+            reasons.append("rule 4: strategy is not in the tested library")
+        if parent_id is None:
+            src = TREASURY
+        else:
+            src = agent_account(parent_id)
+            if self.agents[parent_id].state != "active":
+                reasons.append("parent is not active")
+            if self.ledger.net_result(self.day - 29, self.day, parent_id) <= 0:
+                reasons.append("rule 1: parent has no net profit over 30 days")
+        if self.ledger.balance(src) < 2 * allowance:
+            reasons.append("rule 2: nobody can pay for the clone's first thoughts")
+        if reasons:
+            self.log("replication_refused", parent=parent_id, reasons=reasons)
+            raise Refused(reasons)
+        a = self._new_agent(parent_id, "business", strategy, {"born_free": 1}, "active")
+        self.ledger.transfer(self.day, "internal_transfer", src, agent_account(a.id),
+                             allowance, a.id, "first thoughts")
+        return a
+
+    def unlock_trading(self, agent_id, threshold):
+        """An agent may start trading once it has EARNED at least `threshold`."""
+        a = self.agents[agent_id]
+        if self.ledger.net_result(0, self.day, agent_id) >= threshold and self.cash(agent_id) >= threshold:
+            a.params["can_trade"] = 1
+            self.log("trading_unlocked", agent=agent_id)
+        return bool(a.params.get("can_trade"))
 
     @staticmethod
     def _vary(parent_params, requested, bound=0.2):

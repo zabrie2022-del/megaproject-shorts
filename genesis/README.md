@@ -12,3 +12,9 @@ Rebuilt on 19 November 2026 from the plan "Project Genesis: Architecture and Roa
 
 Not built here: trading gateway, dashboard, store, wallets, anything with real money.
 Next step: Stage 5 (trading agents on live prices, play money) or the business engine (store).
+
+## Born-free agents (added 19 November 2026)
+- `Genesis.born_free()`: a clone starts with no budget, only $1 for its first thoughts, paid by its parent.
+- It earns from customer jobs first; `unlock_trading()` lets it trade only with money it earned.
+- With no work it runs out, goes on probation and shuts down.
+- `run_born_free.py`: modeled run. `python3 run_born_free.py 30 300` (customers per day). Assumed numbers, play money.
