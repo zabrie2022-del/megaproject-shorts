@@ -65,7 +65,7 @@ def scene_a(v, t):
     header(L)
     final = v.get("hook_text") or f"{fmt(v['hero'])} {v['unit']}"
     size = fit(final, BOLD, 290, 980)
-    pop = 1 + 0.06 * (1 - prog(t, 0.0, 0.35))          # a small settle, visible from frame 0
+    pop = 1 + 0.02 * (1 - prog(t, 0.0, 0.35))          # a small settle, visible from frame 0
     text(L, final, 620, BOLD, int(size * min(pop, 980 / max(1, size) * 10)), WHITE, 1.0)
     a = max(0.9, prog(t, 0.0, 0.3))
     text(L, v["headline"], 1010, MED, fit(v["headline"], MED, 68, 980), WHITE, a)
