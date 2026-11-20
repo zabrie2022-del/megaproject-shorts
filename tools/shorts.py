@@ -60,15 +60,16 @@ def fmt(n):
 
 
 def scene_a(v, t):
+    """Opening hook. Everything important is readable on the very first frame."""
     L = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     header(L)
-    p = prog(t, 0.2, 1.6)
-    final = f"{fmt(v['hero'])} {v['unit']}"
+    final = v.get("hook_text") or f"{fmt(v['hero'])} {v['unit']}"
     size = fit(final, BOLD, 290, 980)
-    text(L, f"{fmt(v['hero'] * p)} {v['unit']}", 620, BOLD, size, WHITE, prog(t, 0.1, 0.4))
-    a = prog(t, 1.3, 0.5)
-    text(L, v["headline"], 1010, MED, fit(v["headline"], MED, 68, 980), WHITE, a, dy=int(30 * (1 - a)))
-    a = prog(t, 1.9, 0.5)
+    pop = 1 + 0.06 * (1 - prog(t, 0.0, 0.35))          # a small settle, visible from frame 0
+    text(L, final, 620, BOLD, int(size * min(pop, 980 / max(1, size) * 10)), WHITE, 1.0)
+    a = max(0.9, prog(t, 0.0, 0.3))
+    text(L, v["headline"], 1010, MED, fit(v["headline"], MED, 68, 980), WHITE, a)
+    a = prog(t, 0.5, 0.4)
     text(L, v["sub"], 1130, BOLD, fit(v["sub"], BOLD, 60, 980), v["accent"], a, dy=int(30 * (1 - a)))
     return L
 
@@ -132,7 +133,7 @@ def scene_d(v, t):
         text(L, line, 720 + i * 112, BOLD, fit(line, BOLD, 82, 980), v["accent"] if hot else WHITE, a,
              dy=int(30 * (1 - a)))
     a = prog(t, 1.5, 0.5)
-    text(L, "Follow for more megaprojects", 720 + len(v["closing"]) * 112 + 110, MED, 46, WHITE, a)
+    text(L, "Subscribe for more megaprojects", 720 + len(v["closing"]) * 112 + 110, MED, 46, WHITE, a)
     return L
 
 

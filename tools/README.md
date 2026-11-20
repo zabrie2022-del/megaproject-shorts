@@ -29,3 +29,9 @@ Every video for this channel must have sound. These scripts build a 21-second ve
 
 Needs Python with Pillow and numpy, ffmpeg, and the Poppins fonts in
 `/usr/share/fonts/truetype/google-fonts/`.
+
+## Hook and ending (changed 20 Nov 2026)
+
+- The opening scene shows the big number and headline on the very first frame. To show words instead
+  of a plain number, add `hook_text="$62 BILLION"` to the video (it replaces `hero` and `unit` on screen).
+- The last scene ends with "Subscribe for more megaprojects".
