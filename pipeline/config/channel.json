@@ -15,5 +15,7 @@
     "mode": "approve_then_publish",
     "_mode_note": "Videos are uploaded as private. They go public only after the owner replies 'publish' in the chat of that day's run."
   },
-  "daily_quota": {"uploads_per_day": 1, "max_api_units_per_day": 3000}
+  "daily_quota": {"uploads_per_day": 1, "max_api_units_per_day": 3000},
+  "require_real_footage": true,
+  "_require_real_footage_note": "Owner's rule (25 Nov 2026): no video goes to YouTube unless it shows real footage or photos (places, people, construction). Graphics-only videos fail QC and stop the run."
 }

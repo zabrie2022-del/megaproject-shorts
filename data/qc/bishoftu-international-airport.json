@@ -1,6 +1,6 @@
 {
  "slug": "bishoftu-international-airport",
- "passed": true,
+ "passed": false,
  "checks": [
   {
    "check": "resolution 1080x1920 (9:16)",
@@ -101,6 +101,11 @@
    "check": "claims listed for the on-screen numbers",
    "passed": true,
    "detail": "10 claims, 16 numbers"
+  },
+  {
+   "check": "shows real footage or photos (owner's rule)",
+   "passed": false,
+   "detail": "0 licensed real clips/photos; at least 3 needed, graphics-only videos are not allowed"
   },
   {
    "check": "every media asset has an origin and licence",

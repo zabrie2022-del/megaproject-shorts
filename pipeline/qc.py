@@ -104,7 +104,12 @@ def main():
     numbers = set(re.findall(r"\d[\d.,]*", " ".join(json.dumps(s) for s in spec["scenes"] if s["type"] != "closing")))
     check("claims listed for the on-screen numbers", len(fc) >= min(len(numbers), 5), f"{len(fc)} claims, {len(numbers)} numbers")
 
-    # 7 licensing
+    # 7 real footage (owner's rule) and licensing
+    if CH.get("require_real_footage"):
+        real = [m for m in spec.get("media", []) if m.get("kind") in ("video", "photo") and m.get("real")
+                and m.get("license") and m.get("source")]
+        check("shows real footage or photos (owner's rule)", len(real) >= 3,
+              f"{len(real)} licensed real clips/photos; at least 3 needed, graphics-only videos are not allowed")
     bad = [x for x in spec.get("assets", []) + info["assets"] if not x.get("license") or not x.get("origin")]
     check("every media asset has an origin and licence", not bad, json.dumps(bad) if bad else "all generated in-house")
 
