@@ -1,0 +1,136 @@
+{
+ "slug": "bishoftu-international-airport",
+ "passed": true,
+ "checks": [
+  {
+   "check": "resolution 1080x1920 (9:16)",
+   "passed": true,
+   "detail": "1080x1920"
+  },
+  {
+   "check": "frame rate 30 fps",
+   "passed": true,
+   "detail": "30/1"
+  },
+  {
+   "check": "duration 15-60 s",
+   "passed": true,
+   "detail": "43.1 s"
+  },
+  {
+   "check": "file under 100 MB (upload limit)",
+   "passed": true,
+   "detail": "1.8 MB"
+  },
+  {
+   "check": "audio stream present (AAC)",
+   "passed": true,
+   "detail": "aac"
+  },
+  {
+   "check": "loudness -17 to -11 LUFS",
+   "passed": true,
+   "detail": "-14.5 LUFS"
+  },
+  {
+   "check": "true peak at or below -1 dBFS",
+   "passed": true,
+   "detail": "-1.4 dBFS"
+  },
+  {
+   "check": "no silent gaps in the narration",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "captions in order, inside the video, not overlapping",
+   "passed": true,
+   "detail": "29 cues"
+  },
+  {
+   "check": "every caption sits inside its scene's narration",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "captions file written",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "title 20-70 characters",
+   "passed": true,
+   "detail": "63 chars"
+  },
+  {
+   "check": "description has text, sources and the AI-voice note",
+   "passed": true,
+   "detail": "909 chars"
+  },
+  {
+   "check": "3-15 tags",
+   "passed": true,
+   "detail": "9 tags"
+  },
+  {
+   "check": "thumbnail (first frame) made",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "hook on the first frame",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "closing asks to subscribe",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "every claim verified with a source",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "at least 3 different source websites",
+   "passed": true,
+   "detail": "addisfortune.news, african.business, airwaysmag.com, corporate.ethiopianairlines.com, engineeringnews.co.za, khaleejtimes.com, mediaoffice.ae, ntu.edu.sg, thenationalnews.com"
+  },
+  {
+   "check": "claims listed for the on-screen numbers",
+   "passed": true,
+   "detail": "10 claims, 16 numbers"
+  },
+  {
+   "check": "every media asset has an origin and licence",
+   "passed": true,
+   "detail": "all generated in-house"
+  },
+  {
+   "check": "not already uploaded",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "no banned topics (investment tips, gambling, crypto)",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "not made for kids flag set",
+   "passed": true,
+   "detail": ""
+  },
+  {
+   "check": "synthetic-media decision recorded",
+   "passed": true,
+   "detail": "Animated infographics with an AI narrator who does not imitate a real person; nothing realistic is depicted."
+  },
+  {
+   "check": "no YouTube AI disclosure needed (the upload tool cannot set it)",
+   "passed": true,
+   "detail": ""
+  }
+ ]
+}

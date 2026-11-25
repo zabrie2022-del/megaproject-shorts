@@ -1,0 +1,19 @@
+{
+  "channel_title": "Mega Africa Builds",
+  "channel_id": "UCJpeE_ZgqO1_DZ67W0ult_g",
+  "windsor_account": "111783",
+  "language": "en",
+  "header": "A F R I C A N   M E G A P R O J E C T S",
+  "closing_line": "Subscribe for more megaprojects",
+  "voice": "am_michael",
+  "voice_speed": 1.06,
+  "music_volume": 0.11,
+  "loudness_target_lufs": -14,
+  "short": {"width": 1080, "height": 1920, "fps": 30, "min_seconds": 15, "max_seconds": 60},
+  "upload_defaults": {"privacy_status": "private", "made_for_kids": false, "category_id": "27"},
+  "publishing": {
+    "mode": "approve_then_publish",
+    "_mode_note": "Videos are uploaded as private. They go public only after the owner replies 'publish' in the chat of that day's run."
+  },
+  "daily_quota": {"uploads_per_day": 1, "max_api_units_per_day": 3000}
+}

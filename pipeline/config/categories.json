@@ -1,0 +1,63 @@
+{
+  "_note": "Categories for the Mega Africa Builds channel. Enabled categories feed the daily pipeline. The general categories at the bottom are kept for a possible second channel and are disabled here, because mixing unrelated niches on one channel weakens YouTube recommendations.",
+  "categories": [
+    {
+      "id": "energy",
+      "name": "Energy and Power",
+      "enabled": true,
+      "weight": 15,
+      "keywords": ["dam", "hydro", "hydropower", "solar", "wind farm", "wind", "power plant", "refinery", "lng", "gas", "oil", "pipeline", "nuclear", "geothermal", "megawatt", "mw", "gw", "grid", "electricity", "hydrogen", "battery"],
+      "rules": "Give capacity in MW or GW and compare it to something the viewer knows (a country's demand, homes powered)."
+    },
+    {
+      "id": "transport",
+      "name": "Rail, Roads, Bridges and Airports",
+      "enabled": true,
+      "weight": 15,
+      "keywords": ["railway", "rail", "train", "metro", "expressway", "highway", "road", "bridge", "tunnel", "airport", "corridor", "brt", "tram", "km"],
+      "rules": "Give length, travel-time saved or passengers per year."
+    },
+    {
+      "id": "ports_trade",
+      "name": "Ports and Trade",
+      "enabled": true,
+      "weight": 12,
+      "keywords": ["port", "harbour", "harbor", "terminal", "container", "teu", "free zone", "special economic zone", "canal", "shipping", "logistics hub"],
+      "rules": "Give containers (TEU) or tonnes per year and rank against other ports."
+    },
+    {
+      "id": "cities_buildings",
+      "name": "New Cities and Tall Buildings",
+      "enabled": true,
+      "weight": 13,
+      "keywords": ["new city", "smart city", "capital", "tower", "skyscraper", "tallest", "stadium", "mosque", "museum", "housing", "eko atlantic", "downtown"],
+      "rules": "Give height, floor area, population planned or cost."
+    },
+    {
+      "id": "mining_industry",
+      "name": "Mining and Industry",
+      "enabled": true,
+      "weight": 10,
+      "keywords": ["mine", "mining", "rare earth", "lithium", "cobalt", "copper", "iron ore", "gold", "factory", "plant", "smelter", "fertilizer", "steel", "industrial park"],
+      "rules": "Give reserves, output per year or investment. No investment or trading tips."
+    },
+    {
+      "id": "water_climate",
+      "name": "Water and Climate",
+      "enabled": true,
+      "weight": 10,
+      "keywords": ["desalination", "irrigation", "water", "great green wall", "reforestation", "flood", "climate", "reservoir", "canal"],
+      "rules": "Give people served, hectares or litres per day."
+    },
+    {"id": "world_news", "name": "World News", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."},
+    {"id": "business_finance", "name": "Business and Finance", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only. No investment advice."},
+    {"id": "tech_ai", "name": "Technology and AI", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."},
+    {"id": "science", "name": "Science and Discovery", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."},
+    {"id": "history", "name": "History and Documentaries", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."},
+    {"id": "environment", "name": "Environment and Climate", "enabled": false, "weight": 0, "keywords": [], "rules": "Covered by water_climate on this channel."},
+    {"id": "sports", "name": "Sports", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."},
+    {"id": "culture", "name": "Culture and Entertainment", "enabled": false, "weight": 0, "keywords": [], "rules": "Second channel only."}
+  ],
+  "trusted_domains": ["reuters.com", "bloomberg.com", "ft.com", "bbc.com", "bbc.co.uk", "apnews.com", "aljazeera.com", "theafricareport.com", "africanews.com", "theeastafrican.co.ke", "businessdailyafrica.com", "nation.africa", "premiumtimesng.com", "constructionreviewonline.com", "africa-energy-portal.org", "afdb.org", "worldbank.org", "iea.org", "irena.org", "gov", "who.int", "un.org", "cnbc.com", "theguardian.com", "economist.com", "semafor.com", "engineeringnews.co.za", "dailynewsegypt.com", "ahram.org.eg", "moroccoworldnews.com", "addisstandard.com", "thecitizen.co.tz", "allafrica.com", "wikipedia.org"],
+  "banned_topics": ["crypto", "bitcoin", "forex", "trading tips", "investment advice", "betting", "gambling"]
+}
