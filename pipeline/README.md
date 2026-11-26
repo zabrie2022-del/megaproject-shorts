@@ -1,9 +1,10 @@
 # Mega Africa Builds: automated Shorts pipeline
 
-> **Owner's rule (25 Nov 2026): every video must show real footage or photos (places, people, construction).**
-> Graphics-only videos fail QC (`require_real_footage` in config/channel.json) and must not be uploaded.
-> Until a licensed footage source is connected, a run that cannot get real footage stops after QC and tells
-> the owner. The Bishoftu graphics-only Short was rejected by the owner and must never be uploaded.
+> **Owner's standing instructions (night of 25 Nov 2026, these replace the morning rule):**
+> choose the best option without asking, make the videos and publish them after QC. Real or AI-generated
+> footage only when a connected app gives it free and without a watermark; otherwise the pipeline's drawn
+> graphics are the standard (`require_real_footage: false`). Never use watermarking tools or paid plans.
+> The Bishoftu Short from 25 Nov was rejected by the owner and must never be uploaded.
 
 This folder turns the channel into a daily, mostly automatic production line that runs in Claude
 scheduled tasks in the cloud, so it keeps working when the owner's laptop is off. It costs nothing to run

@@ -12,10 +12,10 @@
   "short": {"width": 1080, "height": 1920, "fps": 30, "min_seconds": 15, "max_seconds": 60},
   "upload_defaults": {"privacy_status": "private", "made_for_kids": false, "category_id": "27"},
   "publishing": {
-    "mode": "approve_then_publish",
-    "_mode_note": "Videos are uploaded as private. They go public only after the owner replies 'publish' in the chat of that day's run."
+    "mode": "publish_after_qc",
+    "_mode_note": "Owner's standing instruction (night of 25 Nov 2026): choose the best option without asking, make the videos and publish them. Only a video that passed QC with every number verified is uploaded, as public; the daily run then reports to the owner."
   },
   "daily_quota": {"uploads_per_day": 1, "max_api_units_per_day": 3000},
-  "require_real_footage": true,
-  "_require_real_footage_note": "Owner's rule (25 Nov 2026): no video goes to YouTube unless it shows real footage or photos (places, people, construction). Graphics-only videos fail QC and stop the run."
+  "require_real_footage": false,
+  "_require_real_footage_note": "Owner's decision (night of 25 Nov 2026, replaces the morning rule): real or AI-generated footage is used only when a connected app gives it free and without a watermark; otherwise the pipeline's own drawn graphics are the standard. Never use a tool that adds a watermark, never spend money or paid credits."
 }
